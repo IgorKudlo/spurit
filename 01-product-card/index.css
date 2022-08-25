@@ -1,1 +1,172 @@
-/* Смотри сколько снизу свободного места! Оно идеально подойдёт, чтобы писать твои стили! */
+:root {
+    --main-color: #2F2F2F;
+    --green: #42940F;
+    --green-dark: #1F5200;
+    --gray: #4E4E4E;
+    --golden: #FFCF56;
+    --rose: #FDCFF3;
+    --card-offset: 24px;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+@font-face {
+    src: url("./assets/fonts/Arial-regular.woff2") format("woff2"),
+         url("./assets/fonts/Arial-regular.woff") format("woff");
+    font-family: 'Arial';
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    src: url("./assets/fonts/Arial-black.woff2") format("woff2"),
+         url("./assets/fonts/Arial-black.woff") format("woff");
+    font-family: 'Arial';
+    font-weight: 900;
+    font-display: swap;
+}
+
+body {
+    margin: 0;
+    padding: 0 20px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    background: #F6F6F6;
+    color: var(--main-color);
+}
+
+.button {
+    display: block;
+    padding: 10px 15px;
+    color: var(--green);
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 2px solid var(--green);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .25s ease-out;
+}
+
+.button:hover {
+    color: #fff;
+    background-color: var(--green);
+}
+
+.button:active {
+    border-color: var(--green-dark);
+    background-color: var(--green-dark);
+}
+
+.button--disabled {
+    color: #fff;
+    background-color: var(--gray);
+    border-color: var(--gray);
+    pointer-events: none;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tags__item {
+    margin-right: 17px;
+    margin-bottom: 5px;
+}
+
+.tag {
+    padding: 0 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+    border-radius: 8px;
+}
+
+.tag--new {
+    background-color: var(--rose);
+}
+
+.tag--low {
+    background-color: var(--golden);
+}
+
+.section {
+    margin: 0 auto;
+    padding: 40px 0 60px;
+    max-width: 1180px;
+}
+
+.section__heading {
+    margin: 0 0 40px;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 72px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.section__cards {
+    margin: 0;
+    padding: 0;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 20px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 45px -4px rgba(0, 0, 0, 0.18);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card__tags {
+    position: absolute;
+    top: 16px;
+    left: 17px;
+}
+
+.card__image {
+    display: block;
+    max-width: 100%;
+}
+
+.card__body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: var(--card-offset);
+}
+
+.card__title {
+    margin: 0 0 16px;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.card__text {
+    margin: 0 0 24px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.card__button {
+    width: 100%;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+
+}
